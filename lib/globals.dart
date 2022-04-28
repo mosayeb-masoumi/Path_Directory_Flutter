@@ -1,3 +1,0 @@
-class Globals{
-  var progress;
-}

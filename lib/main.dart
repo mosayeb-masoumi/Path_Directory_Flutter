@@ -1,16 +1,25 @@
 
 import 'package:download_dialog_flutter/create_path_page.dart';
-import 'package:download_dialog_flutter/home_page.dart';
+import 'package:download_dialog_flutter/flutter_downloader.dart';
+import 'package:download_dialog_flutter/dio_downloader_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_downloader/flutter_downloader.dart';
 
-void main() {
+
+
+Future<void> main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await FlutterDownloader.initialize(debug: true );// optional: set false to disable printing logs to console);
+
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,8 +28,9 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
-      // home: CreatePath(),
+
+      home: FlutterDownloaderPage(),
+
     );
   }
 }
