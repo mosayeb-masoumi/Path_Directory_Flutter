@@ -30,7 +30,7 @@ class _FlutterDownloaderPageState extends State<FlutterDownloaderPage> {
    await FlutterDownloader.enqueue(
       url: url,
       savedDir: path,
-      saveInPublicStorage: true,
+      saveInPublicStorage: true,   // needed when we wanna save in internal storage  /storage/emulated/0/
       showNotification: true, // show download progress in status bar (for Android)
       openFileFromNotification: true, // click on notification to open downloaded file (for Android)
     );
